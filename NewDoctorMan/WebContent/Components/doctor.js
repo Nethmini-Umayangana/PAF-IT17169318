@@ -31,11 +31,28 @@
 	
 	
 	// If valid----------------------
-	$("#formItem").submit();
+	$("#formDoctor").submit();
 	});
 	
+	//var type = ($("#hidDoctorIDSave").val() == "") ? "POST" : "PUT";
+	
+	//$.ajax(
+	//{
+	//	url : "DoctorAPI",
+	//	type : type,
+	//	data : $("#formItem").serialize(),
+	//	dataType : "text",
+	//	complete : function(response, status)
+	//	{
+	//		onDoctorSaveComplete(reponse, responseText, status);
+	//	}
+	
+	//	});
+//	});
+	
+	
 	//UPDATE
-	$(document).on("click", "btnUpdate", function(event)
+	$(document).on("click", ".btnUpdate", function(event)
 			{
 				$("#hidDoctorIDSave").val($(this).closest("tr").find('#hidDoctorIDUpdate').val());
 				$("#doctorName").val($(this).closest("tr").find('td:eq(0)').text());
@@ -94,10 +111,10 @@
 	 return "Insert E-mail.";
 	 }
 	// GENDER
-	if ($('input[name="rdoGender"]:checked').length === 0)
-	 {
-	 return "Select gender.";
-	 }
+	//if ($('input[name="rdoGender"]:checked').length === 0)
+	// {
+	// return "Select gender.";
+	// }
 	// AGE
 	if ($("#age").val().trim() == "")
 	 {

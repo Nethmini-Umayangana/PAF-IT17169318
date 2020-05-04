@@ -1,5 +1,8 @@
-<%@ page import= "model.Doctor" language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@page import="java.nio.channels.SeekableByteChannel"%>
+	<%@page import="model.Doctor"%>
+
 
 <%
 //Initialize..................................
@@ -18,14 +21,14 @@ if (request.getParameter("doctorName") != null)
 	{
 		stsMsg = doctorObj.insertItem(request.getParameter("doctorName"),request.getParameter("address"), request.getParameter("phoneNum"),
 				request.getParameter("email"), request.getParameter("gender"), request.getParameter("age"), request.getParameter("status"),
-				request.getParameter("speccialization"), request.getParameter("hospitalWork"), request.getParameter("details"),
+				request.getParameter("specialization"), request.getParameter("hospitalWork"), request.getParameter("details"),
 				request.getParameter("username"), request.getParameter("password"));
 	}
 	else //Update.....................
 	{
 		stsMsg = doctorObj.updateItem(request.getParameter("hidDoctorIDSave"), request.getParameter("doctorName"),request.getParameter("address"), request.getParameter("phoneNum"),
 				request.getParameter("email"), request.getParameter("gender"), request.getParameter("age"), request.getParameter("status"),
-				request.getParameter("speccialization"), request.getParameter("hospitalWork"), request.getParameter("details"),
+				request.getParameter("specialization"), request.getParameter("hospitalWork"), request.getParameter("details"),
 				request.getParameter("username"), request.getParameter("password"));
 	}
 	
@@ -61,39 +64,32 @@ if (request.getParameter("hidDoctorIDDelete") != null)
 
 				<form id="formDoctor" name="formDoctor" method="post" action="doctors.jsp">
 
-					Full Name: <input id="doctorName" name="doctorName" type="text" class="form-control form-ccontrol-sm"> 
+					Full Name: <input id="doctorName" name="doctorName" type="text" class="form-control form-control-sm"> 
 						
-					Address: <input id="address" name="address" type="text" class="form-control form-ccontrol-sm"> 
+					Address: <input id="address" name="address" type="text" class="form-control form-control-sm"> 
 					
-					Phone number: <input id="phoneNum" name="phoneNum" type="text" class="form-control form-ccontrol-sm"> 
+					Phone number: <input id="phoneNum" name="phoneNum" type="text" class="form-control form-control-sm"> 
 						
-					E-mail: <input id="email" name="email" type="text" class="form-control form-ccontrol-sm"> 
+					E-mail: <input id="email" name="email" type="text" class="form-control form-control-sm"> 
 						
-					Gender: <div class="checkbox">
-		    					<label><input type="checkbox"> Female</label>
-		    					<label><input type="checkbox"> Male</label>
-		  					</div>
+					Gender: <input id="gender" name="gender" type="text" class="form-control form-control-sm">
 					
-					Age: <input id="age" name="age" type="text" class="form-control form-ccontrol-sm"> 
+					Age: <input id="age" name="age" type="text" class="form-control form-control-sm"> 
 						
-					Status: <div class="checkbox">
-		    					<label><input type="checkbox"> Married</label>
-		    					<label><input type="checkbox"> Unmarried</label>
-		  					</div>
+					Status: <input id="status" name="status" type="text" class="form-control form-control-sm">
 					
-					Specializaion: <input id="age" name="age" type="text" class="form-control form-ccontrol-sm"> 
+					Specializaion: <input id="specialization" name="specialization" type="text" class="form-control form-control-sm"> 
 						
-					Work hospital: <input id="hospitalWork" name="hospitalWork" type="text" class="form-control form-ccontrol-sm"> 
+					Work hospital: <input id="hospitalWork" name="hospitalWork" type="text" class="form-control form-control-sm"> 
 						
-					Details: <input id="details" name="details" type="text" class="form-control form-ccontrol-sm"> 
+					Details: <input id="details" name="details" type="text" class="form-control form-control-sm"> 
 						
-					Username: <input id="username" name="username" type="text" class="form-control form-ccontrol-sm"> 
+					Username: <input id="username" name="username" type="text" class="form-control form-control-sm"> 
 						
-					Password: <input id="password" name="password" type="text" class="form-control form-ccontrol-sm"> 
+					Password: <input id="password" name="password" type="text" class="form-control form-control-sm"> 
 					
-					<input type="hidden" id="hidDoctorIDSave" name="hidDoctorIDSave" value=""> 
-					
-					<input type="button" id="btnSave" value="Save" class="btn btn-primary">
+					<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
+					<input type="hidden" id="hidDoctorIDSave" name="hidDoctorIDSave" value="">
 
 				</form>
 

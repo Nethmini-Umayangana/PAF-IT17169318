@@ -112,11 +112,13 @@ public class Doctor {
 				output += "<td>" + details + "</td>";
 				output += "<td>" + username + "</td>";
 				output += "<td>" + password + "</td>";
+				
 				// buttons
-				output += "<td><input name=\"btnUpdate\" type=\"button\" value=\"Update\" class=\"btn btn-secondary\"></td>"
-						+ "<td><form method=\"post\" action=\"register.jsp\">"
+				output += "<td><input name=\"btnUpdate\" type=\"button\" value=\"Update\" class=\"btnUpdate btn btn-secondary\"></td>"
+						+ "<td><form method=\"post\" action=\"doctors.jsp\">"
 						+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\" class=\"btn btn-danger\">"
-						+ "<input name=\"hidDoctorDelete\" type=\"hidden\" value=\"" + doctorID + "\">" + "</form></td></tr>";
+						+ "<input name=\"hidDoctorIDDelete\" type=\"hidden\" value=\"" 
+						+ doctorID + "\">" + " </form></td></tr> ";
 						//+ "<input name=\"doctorID\" type=\"hidden\" value=\"" + doctorID + "\">" + "</form></td></tr>";
 			}
 			con.close();
