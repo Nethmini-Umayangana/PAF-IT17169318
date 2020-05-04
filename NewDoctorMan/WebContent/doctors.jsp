@@ -46,8 +46,9 @@ if (request.getParameter("hidDoctorIDDelete") != null)
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="Components/jquery-3.2.1.min.js" rel="stylesheet">
+<link rel="stylesheet" href="View/bootstrap.min.css">
+<script src="Components/jquery-3.2.1.min.js"></script>
+<script src="Components/doctor.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
