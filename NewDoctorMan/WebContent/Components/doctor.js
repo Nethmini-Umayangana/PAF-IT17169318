@@ -98,11 +98,21 @@
 	 {
 	 return "Insert phone number.";
 	 }
-	//  PHONE NUMBER NUUMERICAL VALUE
+	//  PHONE NUMBER NUMERICAL VALUE
 	var phoneNum = $("#phoneNum").val().trim();
 	if (!$.isNumeric(phoneNum))
 		{
-			return "Inserrt a numerical value for phone number.";
+			return "Insert a numerical value for phone number.";
+		}
+	//phone number  validation
+	function mobileValidation(phoneNum, phoneNum) {
+		 var regExpression = /^\d{10}$/;
+		 if (!regExpression.test(phone)) {
+		 id.style.backgroundColor = "red";
+		 alert("Invalid Mobile number")
+		 }else{
+		 value.style.backgroundColor = "";
+		 }
 		}
 	
 	// E-MAIL
@@ -110,16 +120,42 @@
 	 {
 	 return "Insert E-mail.";
 	 }
+	
+	//email validation
+	function emailValidation(email, email) {
+		 var regExpression = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		 if (!regExpression.test(email)) {
+		 id.style.backgroundColor = "red";
+		 alert("Invalid E-mail")
+		 }else{
+		 value.style.backgroundColor = "";
+		 }
+		} 
+	
 	// GENDER
 	//if ($('input[name="rdoGender"]:checked').length === 0)
 	// {
 	// return "Select gender.";
 	// }
+	
+	// GENDER
+	if ($("#gender").val().trim() == "")
+	 {
+	 return "Insert gender.";
+	 }
 	// AGE
 	if ($("#age").val().trim() == "")
 	 {
 	 return "Insert age.";
 	 }
+	
+//  AGE NUUMERICAL VALUE
+	var age = $("#age").val().trim();
+	if (!$.isNumeric(age))
+		{
+			return "Insert a numerical value for age.";
+		}
+	
 	// STATUS
 	if ($("#status").val().trim() == "")
 	 {
