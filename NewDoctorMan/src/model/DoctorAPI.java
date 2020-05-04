@@ -17,9 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/DoctorAPI")
 public class DoctorAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+     
 	
 	Doctor doctorObj = new Doctor();
-       
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,7 +34,7 @@ public class DoctorAPI extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -41,7 +42,7 @@ public class DoctorAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String output = doctorObj.insertItem(request.getParameter("doctorName"), 
+		        String output = doctorObj.insertItem(request.getParameter("doctorName"), 
 				request.getParameter("address"),
 				request.getParameter("phoneNum"),
 				request.getParameter("email"),
@@ -62,9 +63,10 @@ public class DoctorAPI extends HttpServlet {
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		 Map paras = getParasMap(request);
+		
+				 Map paras = getParasMap(request);
 		 
-		 String output = doctorObj.updateItem(paras.get("hidDoctorIDSAve").toString(), 
+		         String output = doctorObj.updateItem(paras.get("hidDoctorIDSave").toString(), 
 				 paras.get("doctorName").toString(),
 				 paras.get("address").toString(),
 				 paras.get("phoneNum").toString(),
@@ -79,7 +81,6 @@ public class DoctorAPI extends HttpServlet {
 				 paras.get("password").toString());
 		 
 		 response.getWriter().write(output);
-		
 	}
 
 	/**
@@ -87,12 +88,12 @@ public class DoctorAPI extends HttpServlet {
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		Map paras = getParasMap(request);
 		 
 		String output = doctorObj.deleteItem(paras.get("doctorID").toString());
 		 
 		response.getWriter().write(output);
-		
 	}
 	
 	private static Map getParasMap(HttpServletRequest request)

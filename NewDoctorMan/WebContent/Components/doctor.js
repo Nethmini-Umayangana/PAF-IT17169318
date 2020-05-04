@@ -1,9 +1,7 @@
 	$(document).ready(function()
 	{
-		if($("#alertSuccess").text().trim() == "")
-		{
-			$("#alertSuccess").hide();
-		}
+		$("#alertSuccess").hide();
+		
 		$("#alertError").hide();
 	});
 	
@@ -31,25 +29,55 @@
 	
 	
 	// If valid----------------------
-	$("#formDoctor").submit();
+	//$("#formDoctor").submit();
+	//});
+	
+	var type = ($("#hidDoctorIDSave").val() == "") ? "POST" : "PUT";
+	
+	$.ajax(
+	{
+		url : "DoctorAPI",
+		type : type,
+		data : $("#formDoctor").serialize(),
+		dataType : "text",
+		complete : function(response, status)
+		{
+			onDoctorSaveComplete(reponse, responseText, status);
+		}
+	
+		});
 	});
 	
-	//var type = ($("#hidDoctorIDSave").val() == "") ? "POST" : "PUT";
-	
-	//$.ajax(
-	//{
-	//	url : "DoctorAPI",
-	//	type : type,
-	//	data : $("#formItem").serialize(),
-	//	dataType : "text",
-	//	complete : function(response, status)
-	//	{
-	//		onDoctorSaveComplete(reponse, responseText, status);
-	//	}
-	
-	//	});
-//	});
-	
+	function onDoctorSaveComplete(response, status)
+	{
+		if (status == "success")
+			{
+				var resultSet = JSON.parse(response);
+				
+				if (resultSet.status.trim() == "success")
+					{
+						$("#alertSuccess").text("Successfully saved.");
+						$("#alertSuccess").show();
+						
+						$("#divDoctorsGrid").html(resultSet.data);
+					} else if (resultSet.status.trim() == "error") 
+						{
+							$("#alertError").text(resultSet.data);
+							$("#alertError").show();
+						}
+			} else if (status == "error")
+				{
+					$("#alertError").text("Error while saving.");
+					$("#alertError").show();
+				} else
+					{
+						$("#alertError").text("Unknown error while saving..");
+						$("#alertError").show();
+					}
+		
+		$("#hidDoctorIDSave").val("");
+		$("#formDoctor")[0].reset();
+	}
 	
 	//UPDATE
 	$(document).on("click", ".btnUpdate", function(event)
@@ -70,13 +98,50 @@
 			})
 	
 	// REMOVE==========================================
-//	$(document).on("click", ".remove", function(event)
-//	{
-//	 $(this).closest(".student").remove();
-//	
-//	 $("#alertSuccess").text("Removed successfully.");
-//	 $("#alertSuccess").show();
-//	});
+	$(document).on("click", ".btnRemove", function(event)
+	{
+		$.ajax(
+				{
+					url : "DoctorAPI",
+					type : "DELETE",
+					data : "doctorID" + $(this).data("doctorID"),
+					dataType : "text",
+					complete : function(response, status)
+					{
+						onDoctorDeleteComplete(reponse, responseText, status);
+					}
+				
+					});
+		});
+	
+	function onDoctorDeleteComplete(response, status)
+	{
+		if (status == "success")
+		{
+			var resultSet = JSON.parse(response);
+			
+			if (resultSet.status.trim() == "success")
+			{
+				$("#alertSuccess").text("Successfully deleted.");
+				$("#alertSuccess").show();
+				
+				$("#divDoctorsGrid").html(resultSet.data);
+			} else if (resultSet.status.trim() == "error") 
+				{
+					$("#alertError").text(resultSet.data);
+					$("#alertError").show();
+				}
+	} else if (status == "error")
+	{
+		$("#alertError").text("Error while deleting.");
+		$("#alertError").show();
+	} else
+		{
+			$("#alertError").text("Unknown error while deleting..");
+			$("#alertError").show();
+		}
+	}
+	
 	
 	//CLIENT-MODEL=================================================================
 	
