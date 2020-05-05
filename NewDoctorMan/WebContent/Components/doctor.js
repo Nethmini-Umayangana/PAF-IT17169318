@@ -184,19 +184,19 @@
 	
 	
 	// GENDER
-	//if ($('input[name="rdoGender"]:checked').length === 0)
-	// {
-	 //return "Select gender.";
-	 //}
+	if ($('input[name="rdoGender"]:checked').length === 0)
+	 {
+	 return "Select gender.";
+	 }
 	
 	
 	
 	
 	// GENDER
-	if ($("#gender").val().trim() == "")
-	 {
-	 return "Insert gender.";
-	 }
+//	if ($("#gender").val().trim() == "")
+//	 {
+//	 return "Insert gender.";
+//	 }
 	
 	// AGE
 	if ($("#age").val().trim() == "")

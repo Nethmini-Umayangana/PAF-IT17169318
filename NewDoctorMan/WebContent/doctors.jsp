@@ -17,31 +17,107 @@
 
 				<h1>Doctor Registration</h1>
 
-				<form id="formDoctor" name="formDoctor" method="post" action="doctors.jsp">
+				<form id="formDoctor" name="formDoctor" method="post" action="doctors.jsp" style="width:200px;">
 
-					Full Name: <input id="doctorName" name="doctorName" type="text" class="form-control form-control-sm"> 
-						
-					Address: <input id="address" name="address" type="text" class="form-control form-control-sm"> 
-					
-					Phone number: <input id="phoneNum" name="phoneNum" type="text" class="form-control form-control-sm"> 
-						
-					E-mail: <input id="email" name="email" type="text" class="form-control form-control-sm"> 
-						
-				    Gender: <input id="gender" name="gender" type="text" class="form-control form-control-sm">
-					
-					Age: <input id="age" name="age" type="text" class="form-control form-control-sm"> 
-						
-					Status: <input id="status" name="status" type="text" class="form-control form-control-sm">
-					
-					Specializaion: <input id="specialization" name="specialization" type="text" class="form-control form-control-sm"> 
-						
-					Work hospital: <input id="hospitalWork" name="hospitalWork" type="text" class="form-control form-control-sm"> 
-						
-					Details: <input id="details" name="details" type="text" class="form-control form-control-sm"> 
-						
-					Username: <input id="username" name="username" type="text" class="form-control form-control-sm"> 
-						
-					Password: <input id="password" name="password" type="text" class="form-control form-control-sm"> 
+						<!-- NAME -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Name: </span>
+						 </div>
+						 <input type="text" id="doctorName" name="doctorName">
+						 </div>
+						 
+						 <!-- ADDRESS -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Address: </span>
+						 </div>
+						 <input type="text" id="address" name="address">
+						 </div>
+						 
+						 <!-- PHONE NUMBER -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Phone Number: </span>
+						 </div>
+						 <input type="text" id="phoneNum" name="phoneNum">
+						 </div>
+						 
+						 <!-- E-MAIL -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">E-mail: </span>
+						 </div>
+						 <input type="text" id="email" name="email">
+						 </div>
+						 
+						 
+						 <!-- GENDER -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Gender: </span>
+						 </div>
+						 &nbsp;&nbsp;Male
+						<input type="radio" id="rdoGenderMale" name="rdoGender" value="Male">
+						 &nbsp;&nbsp;Female
+						<input type="radio" id="rdoGenderFemale" name="rdoGender" value="Female">
+						 </div>
+						 
+						 <!-- AGE -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Age: </span>
+						 </div>
+						 <input type="text" id="age" name="age">
+						 </div>
+						 
+						 <!-- STATUS -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Status: </span>
+						 </div>
+						 <input type="text" id="status" name="status">
+						 </div>
+						 
+						 <!-- SPECIALIZATION -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Specialization: </span>
+						 </div>
+						 <input type="text" id="specialization" name="specialization">
+						 </div>
+						 
+						 <!-- HOSPITAL WORK -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Hospital Work: </span>
+						 </div>
+						 <input type="text" id="hospitalWork" name="hospitalWork">
+						 </div>
+						 
+						 <!-- DETAILS -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Details: </span>
+						 </div>
+						 <input type="text" id="details" name="details">
+						 </div>
+						 
+						 <!-- USERNAME -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Username: </span>
+						 </div>
+						 <input type="text" id="username" name="username">
+						 </div>
+						 
+						 <!-- PASSWORD -->
+						 <div class="input-group input-group-sm mb-3">
+						 <div class="input-group-prepend">
+						 <span class="input-group-text" id="lblName">Password: </span>
+						 </div>
+						 <input type="text" id="password" name="password">
+						 </div>
 					
 					<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
 					<input type="hidden" id="hidDoctorIDSave" name="hidDoctorIDSave" value="">
