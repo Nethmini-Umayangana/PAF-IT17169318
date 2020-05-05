@@ -17,7 +17,7 @@
 
 				<h1>Doctor Registration</h1>
 
-				<form id="formDoctor" name="formDoctor" method="post" action="doctors.jsp" style="width:200px;">
+				<form id="formDoctor" name="formDoctor" method="post" action="doctors.jsp" style="width:250px;">
 
 						<!-- NAME -->
 						 <div class="input-group input-group-sm mb-3">
@@ -48,7 +48,7 @@
 						 <div class="input-group-prepend">
 						 <span class="input-group-text" id="lblName">E-mail: </span>
 						 </div>
-						 <input type="text" id="email" name="email">
+						 <input type="email" id="email" name="email">
 						 </div>
 						 
 						 
@@ -76,7 +76,10 @@
 						 <div class="input-group-prepend">
 						 <span class="input-group-text" id="lblName">Status: </span>
 						 </div>
-						 <input type="text" id="status" name="status">
+						 &nbsp;&nbsp;Married
+						<input type="radio" id="rdoStatusStatus" name="status" value="Married">
+						 &nbsp;&nbsp;Unmarried
+						<input type="radio" id="rdoStatusStatus" name="status" value="Unmarried">
 						 </div>
 						 
 						 <!-- SPECIALIZATION -->
