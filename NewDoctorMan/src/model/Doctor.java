@@ -55,7 +55,7 @@ public class Doctor {
 	   con.close(); 
 	   
 	   String newDoctor = readDoctors();
-	   output = "{\"status\":\"error\", \"data\": \"" + newDoctor + "\"}";
+	   output = "{\"status\":\"success\", \"data\": \"" + newDoctor + "\"}";
 	  
 	   }   catch (Exception e)  
 	  	
@@ -77,7 +77,7 @@ public class Doctor {
 				return "Error while connecting to the database for reading.";
 			}
 			// Prepare the html table to be displayed
-			output = "<table border=\"1\"><tr><th>Doc Name</th><th>Address</th><th>Phone</th><th>E-mail</th><th>Gender</th>"
+			output = "<table border='1'><tr><th>Doc Name</th><th>Address</th><th>Phone</th><th>E-mail</th><th>Gender</th>"
 					+ "<th>Age</th><th>Status</th><th>Specialization</th><th>Hospital</th><th>Details</th><th>User Name</th><th>Password</th><th>Update</th><th>Remove</th></tr>";
 			String query = "select * from doctor";
 			Statement stmt = con.createStatement();
@@ -118,7 +118,7 @@ public class Doctor {
 				// buttons
 				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td>"
 						//+ "<td><form method=\"post\" action=\"doctors.jsp\">"
-						+ "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-doctorID='" 
+						+ "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-doctorid='" 
 						+ doctorID + "'>" + " </td></tr> ";
 						//+ "<input name=\"doctorID\" type=\"hidden\" value=\"" + doctorID + "\">" + "</form></td></tr>";
 			}
@@ -163,7 +163,7 @@ public class Doctor {
 			con.close();
 			
 			 String newDoctor = readDoctors();
-			 output = "{\"status\":\"error\", \"data\": \"" + newDoctor + "\"}";
+			 output = "{\"status\":\"success\", \"data\": \"" + newDoctor + "\"}";
 
 		} catch (Exception e) {
 			output = "{\"status\":\"error\", \"data\": \"Error while updating the item.\"}";   
@@ -189,7 +189,7 @@ public class Doctor {
 			con.close();
 			
 			String newDoctor = readDoctors();
-			output = "{\"status\":\"error\", \"data\": \"" + newDoctor + "\"}";
+			output = "{\"status\":\"success\", \"data\": \"" + newDoctor + "\"}";
 			
 		} catch (Exception e) {
 			output = "{\"status\":\"error\", \"data\": \"Error while deleting the item.\"}";   

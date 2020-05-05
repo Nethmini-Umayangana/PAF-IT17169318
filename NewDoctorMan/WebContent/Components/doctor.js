@@ -1,8 +1,10 @@
 	$(document).ready(function()
-	{
+			{
+		if($("#alertSuccess").text().trim()=="")
+		{
 		$("#alertSuccess").hide();
-		
-		$("#alertError").hide();
+		}
+	    $("#alertError").hide();
 	});
 	
 	// SAVE ============================================
@@ -42,7 +44,7 @@
 		dataType : "text",
 		complete : function(response, status)
 		{
-			onDoctorSaveComplete(reponse, responseText, status);
+			onDoctorSaveComplete(response.responseText, status);
 		}
 	
 		});
@@ -104,11 +106,11 @@
 				{
 					url : "DoctorAPI",
 					type : "DELETE",
-					data : "doctorID" + $(this).data("doctorID"),
+					data : "doctorID=" + $(this).data("doctorid"),
 					dataType : "text",
 					complete : function(response, status)
 					{
-						onDoctorDeleteComplete(reponse, responseText, status);
+						onDoctorDeleteComplete(response.responseText, status);
 					}
 				
 					});
@@ -170,15 +172,7 @@
 			return "Insert a numerical value for phone number.";
 		}
 	//phone number  validation
-	function mobileValidation(phoneNum, phoneNum) {
-		 var regExpression = /^\d{10}$/;
-		 if (!regExpression.test(phone)) {
-		 id.style.backgroundColor = "red";
-		 alert("Invalid Mobile number")
-		 }else{
-		 value.style.backgroundColor = "";
-		 }
-		}
+	
 	
 	// E-MAIL
 	if ($("#email").val().trim() == "")
@@ -187,27 +181,23 @@
 	 }
 	
 	//email validation
-	function emailValidation(email, email) {
-		 var regExpression = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		 if (!regExpression.test(email)) {
-		 id.style.backgroundColor = "red";
-		 alert("Invalid E-mail")
-		 }else{
-		 value.style.backgroundColor = "";
-		 }
-		} 
+	
 	
 	// GENDER
 	//if ($('input[name="rdoGender"]:checked').length === 0)
 	// {
-	// return "Select gender.";
-	// }
+	 //return "Select gender.";
+	 //}
+	
+	
+	
 	
 	// GENDER
 	if ($("#gender").val().trim() == "")
 	 {
 	 return "Insert gender.";
 	 }
+	
 	// AGE
 	if ($("#age").val().trim() == "")
 	 {

@@ -1,7 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-	<%@page import="java.nio.channels.SeekableByteChannel"%>
-	<%@page import="model.Doctor"%>
+<%@page import="model.Doctor"%>
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +27,7 @@
 						
 					E-mail: <input id="email" name="email" type="text" class="form-control form-control-sm"> 
 						
-					Gender: <input id="gender" name="gender" type="text" class="form-control form-control-sm">
+				    Gender: <input id="gender" name="gender" type="text" class="form-control form-control-sm">
 					
 					Age: <input id="age" name="age" type="text" class="form-control form-control-sm"> 
 						
