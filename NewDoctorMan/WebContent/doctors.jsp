@@ -17,7 +17,7 @@
 
 				<h1>Doctor Registration</h1>
 
-				<form id="formDoctor" name="formDoctor" method="post" action="doctors.jsp" style="width:250px;">
+				<form id="formDoctor" name="formDoctor" method="post" action="doctors.jsp" style="width:220px;">
 
 						<!-- NAME -->
 						 <div class="input-group input-group-sm mb-3">
@@ -57,10 +57,11 @@
 						 <div class="input-group-prepend">
 						 <span class="input-group-text" id="lblName">Gender: </span>
 						 </div>
-						 &nbsp;&nbsp;Male
-						<input type="radio" id="rdoGenderMale" name="rdoGender" value="Male">
-						 &nbsp;&nbsp;Female
-						<input type="radio" id="rdoGenderFemale" name="rdoGender" value="Female">
+						 <select id="gender" name="gender">     
+						 <option value="0">--Select Gender--</option>     
+						 <option value="Male">Male</option>     
+						 <option value="Female">Female</option>     
+						 </select>
 						 </div>
 						 
 						 <!-- AGE -->
@@ -73,14 +74,16 @@
 						 
 						 <!-- STATUS -->
 						 <div class="input-group input-group-sm mb-3">
+						<div class="input-group input-group-sm mb-3">
 						 <div class="input-group-prepend">
 						 <span class="input-group-text" id="lblName">Status: </span>
 						 </div>
-						 &nbsp;&nbsp;Married
-						<input type="radio" id="rdoStatusStatus" name="status" value="Married">
-						 &nbsp;&nbsp;Unmarried
-						<input type="radio" id="rdoStatusStatus" name="status" value="Unmarried">
-						 </div>
+						 <select id="status" name="status">     
+						 <option value="0">--Select Status--</option>     
+						 <option value="Married">Married</option>     
+						 <option value="Unmarried">Unmarried</option>     
+						 </select>
+						 </div>	
 						 
 						 <!-- SPECIALIZATION -->
 						 <div class="input-group input-group-sm mb-3">

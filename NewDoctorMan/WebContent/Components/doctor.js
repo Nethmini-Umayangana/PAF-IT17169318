@@ -184,10 +184,16 @@
 	
 	
 	// GENDER
-	if ($('input[name="rdoGender"]:checked').length === 0)
-	 {
-	 return "Select gender.";
-	 }
+	
+	if ($("#gender").val() == "0")
+	{
+		return "Select a gender";
+	}
+
+//	if ($('input[name="rdoGender"]:checked').length === 0)
+//	 {
+//	 return "Select gender.";
+//	 }
 	
 	
 	
@@ -219,10 +225,15 @@
 	
 	// STATUS
 	
-	if ($('input[name="status"]:checked').length === 0)
-	 {
-	 return "Select Status.";
-	 }
+	if ($("#status").val() == "0")
+	{
+		return "Select a status";
+	}
+	
+//	if ($('input[name="status"]:checked').length === 0)
+//	 {
+//	 return "Select Status.";
+//	 }
 	
 	// SPECIALIZATION
 	if ($("#specialization").val().trim() == "")
