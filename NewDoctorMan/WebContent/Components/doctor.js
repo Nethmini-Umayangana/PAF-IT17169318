@@ -219,12 +219,12 @@ function validateItemForm() {
 	}
 	
 	//User validation
-	var usernamechar =/^[a-zA-Z0-9]+$/;
-	var username = $("#username").val().trim();
-	if (usernamechar.test(username) == false) {
-		return "Should enter valid Username";
-	}
-	console.log(usernamechar.test(username));
+//	var usernamechar =/^[a-zA-Z0-9]+$/;
+//	var username = $("#username").val().trim();
+//	if (usernamechar.test(username) == false) {
+//		return "Should enter valid Username";
+//	}
+//	console.log(usernamechar.test(username));
 	
 	
 	// PASSWORD
@@ -233,12 +233,12 @@ function validateItemForm() {
 	}
 	
 	//Password validation
-	var passwordchar =/^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-	var password = $("#password").val().trim();
-	if (passwordchar.test(password) == false) {
-		return "Should enter valid password";
-	}
-	console.log(passwordchar.test(password));
+//	var passwordchar =/^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+//	var password = $("#password").val().trim();
+//	if (passwordchar.test(password) == false) {
+//		return "Should enter valid password";
+//	}
+//	console.log(passwordchar.test(password));
 	
 	return true;
 }
